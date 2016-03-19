@@ -1,12 +1,12 @@
 # main text of home
-name: John Doe
-bio: 'A Man who travels the world eating noodles'
+name: potatozhao
+bio: 'potato is potato'
 
 # if it's an external image, update below for true
-external-image: false
+external-image: true
 picture: 'assets/images/profile.jpg'
 
-url: https://koppl.in/indigo
+url: http://potatozhao.github.io
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
@@ -28,9 +28,9 @@ twitter: mytwitter
 # linkedin: mylinkedin
 youtube: myyoutube
 spotify: myspotify
-github: mygithub
+github: https://github.com/potatozhao
 medium: medium
-email: myemail@gmail.com
+email: 393926004@qq.com
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
