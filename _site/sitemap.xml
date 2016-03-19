@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://potatozhao.github.io/markdown-extra-components/</loc>
+<lastmod>2016-02-24T22:48:00+08:00</lastmod>
+</url>
+<url>
+<loc>https://potatozhao.github.io/markdown-common-elements/</loc>
+<lastmod>2016-02-24T22:44:00+08:00</lastmod>
+</url>
+<url>
+<loc>https://potatozhao.github.io/indigo-jekyll-theme/</loc>
+<lastmod>2016-01-23T22:10:00+08:00</lastmod>
+</url>
+<url>
+<loc>https://potatozhao.github.io/404</loc>
+</url>
+<url>
+<loc>https://potatozhao.github.io/about/</loc>
+</url>
+<url>
+<loc>https://potatozhao.github.io/blog/</loc>
+</url>
+<url>
+<loc>https://potatozhao.github.io/</loc>
+</url>
+<url>
+<loc>https://potatozhao.github.io/projects/</loc>
+</url>
+<url>
+<loc>https://potatozhao.github.io/tags/</loc>
+</url>
+</urlset>
