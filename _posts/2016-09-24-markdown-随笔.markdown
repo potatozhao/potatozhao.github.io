@@ -1,0 +1,12 @@
+---
+title: "吐槽吐槽吐槽"
+layout: post
+date: 2016-03-19
+tag: 
+- markdown
+- elements
+blog: true
+star: true 
+---
+
+#随笔，内容待定
