@@ -14,7 +14,8 @@ permalink: /:title/
 markdown: kramdown
 kramdown:
     input: GFM
-    enable_coderay: true
+#    enable_coderay: true
+    syntax_highlighter: true
     highlighter: rouge
 
 analytics-google: 'UA-MYANALYTICS'
