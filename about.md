@@ -15,7 +15,7 @@ permalink: /about/index.html
 	<li>NodeJS</li>
 	<li>Git</li>
 	<li>Python</li>
-	<li>MySQL - MongoDB</li>
+	<li>MySQL - Redis</li>
 	<li>C++</li>
 </ul>
 
