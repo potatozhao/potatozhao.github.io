@@ -12,7 +12,10 @@ url: http://potatozhao.github.io
 permalink: /:title/
 
 markdown: kramdown
-highlighter: rouge
+kramdown:
+    input: GFM
+    enable_coderay: true
+    highlighter: rouge
 
 analytics-google: 'UA-MYANALYTICS'
 
