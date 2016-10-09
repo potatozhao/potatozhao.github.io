@@ -1,9 +1,10 @@
 ---
-title: "随笔，于10月6日深夜"
+title: "effective python 读书随笔，于10月9日深夜 持续更新"
 layout: post
 date: 2016-10-06 22:44
 tag:
 - markdown
+- python
 blog: true
 star: true
 ---
