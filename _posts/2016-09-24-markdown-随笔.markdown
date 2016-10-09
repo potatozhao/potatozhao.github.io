@@ -1,7 +1,7 @@
 ---
 title: "随笔，于10月6日深夜"
 layout: post
-date: 2016-02-24 22:44
+date: 2016-10-06 22:44
 tag:
 - markdown
 - elements
@@ -9,11 +9,11 @@ blog: true
 star: true
 ---
 
-## Summary:
+## redis 集群介绍:
 
-You can pick as item to see how to apply in markdown.
+简简单单的介绍一下redis的集群配置
 
-### Comum Elements
+### 目录
 - [Basic formatting](#basic-formatting)
 - [Headings](#headings)
 - [Lists](#lists)
