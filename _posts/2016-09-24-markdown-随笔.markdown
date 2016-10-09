@@ -1,11 +1,10 @@
 ---
-title: "随笔，于10月6日深夜"
+title: "随笔，于10月6日深夜，聊聊Redis？"
 layout: post
 date: 2016-10-06 22:44
 tag:
 - markdown
 blog: true
-star: true
 ---
 
 ## redis 集群介绍:

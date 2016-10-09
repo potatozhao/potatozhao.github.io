@@ -6,7 +6,6 @@ tag:
 - markdown
 - python
 blog: true
-star: true
 ---
 
 ## redis 集群介绍:
