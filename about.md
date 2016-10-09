@@ -5,7 +5,9 @@ permalink: /about/index.html
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>菜鸟linux后台程序猿，做过搜索，做过金融后台，依旧很菜。但是特么的我很努力啊！</p>
+<p>菜鸟linux后台程序猿，做过搜索，做过金融后台，依旧很菜。</p>
+
+<p>但是特么的我很努力啊！</p>>
 
 <h2>Skills</h2>
 
