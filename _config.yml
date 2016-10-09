@@ -3,7 +3,7 @@ name: potatozhao
 bio: 'potato is potato'
 
 # if it's an external image, update below for true
-# external-image: true
+external-image: true
 picture: 'assets/images/profile.jpg'
 
 url: http://potatozhao.github.io
