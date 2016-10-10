@@ -14,7 +14,7 @@ blog: true
 
 ### 目录
 
-- [1-10](#1)
+- [1-10](#1-10)
 - [Headings](#headings)
 - [Lists](#lists)
 - [Paragraph Modifiers](#paragraph-modifiers)
@@ -26,32 +26,27 @@ blog: true
 
 ---
 
-### 确认自己所使用的python版本   {#1}
-
+### 确认自己所使用的python版本   {#1-10}
 python3 和python2 的区别有点大，使用的时候请注意。另，某些工具能做到很容易的切换3和2.
 
 ---
 
 ### 遵循PEP8风格指南
-
 良好的代码可阅读性是很重要滴！能抱跑起来是关键，能让人读懂也是很关键滴！
 
 ---
 
 ### 了解bytes，str与unicode的区别
-
 这个。。。以后详细说明，大坑，巨坑，陨石坑。
 
 ---
 
 ### 用辅助函数来取代复杂的表达式
-
 恩。。。一方面是减少错误，另外一方面是增加可阅读性
 
 ---
 
 ### 了解切割序列的方法
-
 * 切片操作不会计较start或者end越界
 * 切片相当于对切片范围内的队列进行拷贝
 
@@ -67,7 +62,6 @@ A Python Example:
 ---
 
 ### 在单次切片中不要同时指定start,end,stride
-
 * 既有start和end又有stride的切割操作，可能会难以理解
 * stride尽可能用正数
 * 在同一个切片操作内，不要同时使用start和end和stride，如果有需要，考虑拆成两条赋值语句去做，其中一条做范围切割，另外一条做步进切割。或者考虑使用itertools模块中的islice。
@@ -87,7 +81,6 @@ A Python Example:
 ---
 
 ### 用列表推导来取代map和filter
-
 *list comperhension* 用一份列表来制作另外一份列表
 
 {% highlight python %}
@@ -102,13 +95,11 @@ A Python Example:
 ---
 
 ### 不要使用含有两个以上表达式的列表推导
-
 那啥。。。连续3个及其以上。。。。你还能看懂这个列表是干嘛的么？嘿嘿嘿。
 
 ---
 
 ### 使用生成器表达式来改写数据量较大的列表推导
-
     a = [x for x in open('a.out')]
 
 如果a.out很大。。。大的超过了你的内存。。。那么。。。嘿嘿嘿。Python是会先把a.out 全部都读进内存的
@@ -122,7 +113,6 @@ A Python Example:
 ---
 
 ### 尽量使用enumerate代替range
-
     a = [1,2,3,4,5]
     for i in range(len(a)):
         print a[i]
