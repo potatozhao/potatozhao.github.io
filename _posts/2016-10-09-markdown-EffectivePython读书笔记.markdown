@@ -97,7 +97,7 @@ A Python Example:
     c = map(lambda x: x**2, a) # 难懂
     d = map(lambda x: x**2, filter(lambda x: x %2 ==0, a)) # 更难懂了。。。
 
-{% endhigjlight %}
+{% endhighlight %}
 
 ---
 
