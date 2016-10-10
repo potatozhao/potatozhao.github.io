@@ -8,7 +8,7 @@ tag:
 blog: true
 ---
 
-## redis 集群介绍:
+## Effective Python:
 
 简简单单的介绍一下redis的集群配置
 
@@ -23,195 +23,109 @@ blog: true
 - [Images](#images)
 - [Code](#code)
 
----
-
-## Basic formatting
-
-This note **demonstrates** some of what [Markdown][1] is *capable of doing*.
-
-And that's how to do it.
-
-{% highlight html %}
-This note **demonstrates** some of what [Markdown][some/link] is *capable of doing*.
-{% endhighlight %}
 
 ---
 
-## Headings
+### 确认自己所使用的python版本
 
-There are six levels of headings. They correspond with the six levels of HTML headings. You've probably noticed them already in the page. Each level down uses one more hash character. But we are using just 4 of them.
-
-# Headings can be small
-
-## Headings can be small
-
-### Headings can be small
-
-#### Headings can be small
-
-{% highlight raw %}
-# Heading
-## Heading
-### Heading
-#### Heading
-{% endhighlight %}
+python3 和python2 的区别有点大，使用的时候请注意。另，某些工具能做到很容易的切换3和2.
 
 ---
 
-## Lists
+### 遵循PEP8风格指南
 
-### Ordered list
+良好的代码可阅读性是很重要滴！能抱跑起来是关键，能让人读懂也是很关键滴！
 
-1. Item 1
-2. A second item
-3. Number 3
+---
 
-{% highlight raw %}
-1. Item 1
-2. A second item
-3. Number 3
-{% endhighlight %}
+### 了解bytes，str与unicode的区别
 
-### Unordered list
+这个。。。以后详细说明，大坑，巨坑，陨石坑。
 
-* An item
-* Another item
-* Yet another item
-* And there's more...
+---
 
-{% highlight raw %}
-* An item
-* Another item
-* Yet another item
-* And there's more...
+### 用辅助函数来取代复杂的表达式
+
+恩。。。一方面是减少错误，另外一方面是增加可阅读性
+
+---
+
+### 了解切割序列的方法
+
+* 切片操作不会计较start或者end越界
+* 切片相当于对切片范围内的队列进行拷贝
+
+A Python Example:
+{% highlight python %}
+
+    a = [1,2,3,4,5]
+    a[:10] # [1,2,3,4,5]
+    b = a[:10] # b = copy.deepcopy(a)
+
 {% endhighlight %}
 
 ---
 
-## Paragraph modifiers
+### 在单次切片中不要同时指定start,end,stride
 
-### Quote
+* 既有start和end又有stride的切割操作，可能会难以理解
+* stride尽可能用正数
+* 在同一个切片操作内，不要同时使用start和end和stride，如果有需要，考虑拆成两条赋值语句去做，其中一条做范围切割，另外一条做步进切割。或者考虑使用itertools模块中的islice。
 
-> Here is a quote. What this is should be self explanatory. Quotes are automatically indented when they are used.
+A Python Example:
+{% highlight python %}
 
-{% highlight raw %}
-> Here is a quote. What this is should be self explanatory.
-{% endhighlight raw %}
+    a = [1,2,3,4,5]
+    a[::2] # [1,3,5]
+    a = [1,2,3,4]
+    a[::2] # [1,3]
+    a[::-2] # [4,2]
+    a[1:3:2] #[2]
 
----
-
-## URLs
-
-URLs can be made in a handful of ways:
-
-* A named link to [Mark It Down][3].
-* Another named link to [Mark It Down](http://markitdown.net/)
-* Sometimes you just want a URL like <http://markitdown.net/>.
-
-{% highlight raw %}
-* A named link to [MarkItDown][3].
-* Another named link to [MarkItDown](http://markitdown.net/)
-* Sometimes you just want a URL like <http://markitdown.net/>.
 {% endhighlight %}
 
 ---
 
-## Horizontal rule
+### 用列表推导来取代map和filter
 
-A horizontal rule is a line that goes across the middle of the page.
-It's sometimes handy for breaking things up.
+*list comperhension* 用一份列表来制作另外一份列表
 
-{% highlight raw %}
----
-{% endhighlight %}
+{% highlight python %}
 
----
+    a = [1,2,3,4,5,6,7,8,9]
+    b = [x**2 for x in a] # [1,4,9,16,25,36,49,64,81]
+    c = map(lambda x: x**2, a) # 难懂
+    d = map(lambda x: x**2, filter(lambda x: x %2 ==0, a)) # 更难懂了。。。
 
-## Images
-
-Markdown can also contain images. I'll need to add something here sometime.
-
-{% highlight raw %}
-![Markdowm Image][/image/url]
-{% endhighlight %}
-
-![Markdowm Image][6]
-
-*Figure Caption*?
-
-{% highlight raw %}
-![Markdowm Image][/image/url]
-<figcaption class="caption">Photo by John Doe</figcaption>
-{% endhighlight %}
-
-![Markdowm Image][6]
-<figcaption class="caption">Photo by John Doe</figcaption>
-
-*Bigger Images*?
-
-{% highlight raw %}
-![Markdowm Image][/image/url]{: class="bigger-image" }
-{% endhighlight %}
-
-![Markdowm Image][6]{: class="bigger-image" }
+{% endhigjlight %}
 
 ---
 
-## Code
+### 不要使用含有两个以上表达式的列表推导
 
-A HTML Example:
+那啥。。。连续3个及其以上。。。。你还能看懂这个列表是干嘛的么？嘿嘿嘿。
 
-{% highlight html %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Just a test</h1>
-</body>
-</html>
-{% endhighlight %}
+---
 
-A CSS Example:
+### 使用生成器表达式来改写数据量较大的列表推导
 
-{% highlight css %}
-pre {
-    padding: 10px;
-    font-size: .8em;
-    white-space: pre;
-}
+    a = [x for x in open('a.out')]
 
-pre, table {
-    width: 100%;
-}
+如果a.out很大。。。大的超过了你的内存。。。那么。。。嘿嘿嘿。Python是会先把a.out 全部都读进内存的
 
-code, pre, tt {
-    font-family: Monaco, Consolas, Inconsolata, monospace, sans-serif;
-    background: rgba(0,0,0,.05);
-}
-{% endhighlight %}
+但是Python有个一个神奇的玩意 *generator expression* 生成器表达式
 
-A JS Example:
+    a = (x for x in open('a.out'))
+    print next(a) # 100
+    print next(a) # 99
 
-{% highlight js %}
-// Sticky Header
-$(window).scroll(function() {
+---
 
-    if ($(window).scrollTop() > 900 && !$("body").hasClass('show-menu')) {
-        $('#hamburguer__open').fadeOut('fast');
-    } else if (!$("body").hasClass('show-menu')) {
-        $('#hamburguer__open').fadeIn('fast');
-    }
+### 尽量使用enumerate代替range
 
-});
-{% endhighlight %}
-
-[1]: http://daringfireball.net/projects/markdown/
-[2]: http://www.fileformat.info/info/unicode/char/2163/index.htm
-[3]: http://www.markitdown.net/
-[4]: http://daringfireball.net/projects/markdown/basics
-[5]: http://daringfireball.net/projects/markdown/syntax
-[6]: http://kune.fr/wp-content/uploads/2013/10/ghost-blog.jpg
+    a = [1,2,3,4,5]
+    for i in range(len(a)):
+        print a[i]
+    for i, value in enumerate(a):
+        print "%d:%d" % (i,value)
 
