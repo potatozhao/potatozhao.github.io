@@ -11,7 +11,7 @@ blog: true
 
 ### 目录
 - [百度](#baidu)
-- [小米](#jingdong)
+- [小米](#xiaomi)
 - [百度金融](#baidujinrong)
 - [京东](#jingdong)
 
