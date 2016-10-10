@@ -15,18 +15,11 @@ blog: true
 ### 目录
 
 - [1-10](#1-10)
-- [Headings](#headings)
-- [Lists](#lists)
-- [Paragraph Modifiers](#paragraph-modifiers)
-- [Urls](#urls)
-- [Horizontal Rule](#horizontal-rule)
-- [Images](#images)
-- [Code](#code)
 
 
 ---
 
-### 确认自己所使用的python版本   {#1-10}
+### 确认自己所使用的python版本   {: #1-10}
 python3 和python2 的区别有点大，使用的时候请注意。另，某些工具能做到很容易的切换3和2.
 
 ---
