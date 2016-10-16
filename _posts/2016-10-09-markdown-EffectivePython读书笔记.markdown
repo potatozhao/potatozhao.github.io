@@ -16,7 +16,7 @@ blog: true
 
 - [1-10](#num1)
 - [11-20](#num11)
-
+- [21](#num21)
 
 ---
 
@@ -84,7 +84,6 @@ A Python Example:
     b = [x**2 for x in a] # [1,4,9,16,25,36,49,64,81]
     c = map(lambda x: x**2, a) # 难懂
     d = map(lambda x: x**2, filter(lambda x: x %2 ==0, a)) # 更难懂了。。。
-
 {% endhighlight %}
 
 ---
@@ -101,20 +100,115 @@ A Python Example:
 
 但是Python有个一个神奇的玩意 *generator expression* 生成器表达式
 
+{% highlight python %}
+
     a = (x for x in open('a.out'))
     print next(a) # 100
     print next(a) # 99
+{% endhighlight %}
 
 ---
 
 ### 尽量使用enumerate代替range
+
+{% highlight python %}
+
     a = [1,2,3,4,5]
     for i in range(len(a)):
         print a[i]
     for i, value in enumerate(a):
         print "%d:%d" % (i,value)
+{% endhighlight %}
 
 ---
 
-### next 11
+### 用zip函数同时遍历两个列表
 {: #num11}
+
+* 可以同时遍历多个迭代器
+* python 3中相当于迭代器，2中则是一次性返回一个正份的列表
+* 如果长度不同，则以最短的为结束符。
+* zip_longest可以以最长的为结束符。
+
+---
+
+### 不要在for和while循环之后加else
+
+这个。。。正常点都不会吧。。。写的话整个循环结束之后会直接执行else的内容。
+
+---
+
+### 合理利用try except else finally中的每一个代码块
+
+* finally 
+    - 如果既要将异常传出，又要在异常发生的时候执行清理工作，那就可以使用try/finally结构。
+* else
+    - try/except/else 如果try没有异常，则执行else语句。
+* 混合使用会更好，每一个代码块个行其责。
+
+---
+
+### 尽量用异常来表示特殊情况，不要反悔None!!!
+
+血泪史。。。。。return 必须返回状态情况。有异常就返回错误。调用必须判断返回值是不是异常。
+
+---
+
+### 了解如何在闭包里使用外围作用域中的变量
+
+额。。。复杂的。。。我实在不想用
+
+---
+
+### 使用生成器来改写直接返回列表的函数
+
+yield!!!!!!yield!
+
+这样就能极大的节省内存。over。
+
+---
+
+### 在参数上边迭代时要多加小心
+
+当参数是迭代器时，请先生成全部数据，再拷贝，再循环。over！！！！注意！！！！先生成全部数据！！！
+
+---
+
+### 用数量可变的位置参数减少视觉杂讯
+
+可变参数是元组。
+
+---
+
+### 用关键字参数来表达可选的行为
+
+关键字参数:
+
+{% highlight python %}
+
+    def func(num = 10, open = False, values):
+        if open:
+            print valuse[num]
+{% endhighlight %}
+
+---
+
+### 用None和文档字符串来描述具有动态默认值的参数
+
+{% highlight python %}
+
+    def func(time = datetime.now()):
+        pass
+    def func(time = None):
+        if time:
+            time = datetime.now()
+        pass
+{% endhighlight %}
+
+time会在模块加载的时候就计算datetime.now()
+之后time的值就不会再改变。所以有必要的话，请使用文档字符串和None来描述默认动态参数
+
+---
+
+### next 21
+{: #num21}
